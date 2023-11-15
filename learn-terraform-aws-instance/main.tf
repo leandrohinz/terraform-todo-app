@@ -199,7 +199,6 @@ module "SG_SSH-22" {
 
 module "instances_AUTH-API" {
   source = "./instances"
-  #instance_count = 6
   ami           = "ami-0cbd40f694b804622"
   instance_type = "t2.micro"
   subnet_id     = "subnet-0088df5de3a4fe490"
@@ -213,7 +212,6 @@ module "instances_AUTH-API" {
 
 module "instances_FRONTEND" {
   source = "./instances"
-  #instance_count = 6
   ami           = "ami-0cbd40f694b804622"
   instance_type = "t2.micro"
   subnet_id     = "subnet-0088df5de3a4fe490"
@@ -227,7 +225,6 @@ module "instances_FRONTEND" {
 
 module "instances_LOG-MESSAGE-PROCESSOR" {
   source = "./instances"
-  #instance_count = 6
   ami           = "ami-0cbd40f694b804622"
   instance_type = "t2.micro"
   subnet_id     = "subnet-0088df5de3a4fe490"
@@ -241,7 +238,6 @@ module "instances_LOG-MESSAGE-PROCESSOR" {
 
 module "instances_TODOS-API" {
   source = "./instances"
-  #instance_count = 6
   ami           = "ami-0cbd40f694b804622"
   instance_type = "t2.micro"
   subnet_id     = "subnet-0088df5de3a4fe490"
@@ -255,7 +251,6 @@ module "instances_TODOS-API" {
 
 module "instances_USERS-API" {
   source = "./instances"
-  #instance_count = 6
   ami           = "ami-0cbd40f694b804622"
   instance_type = "t2.micro"
   subnet_id     = "subnet-0088df5de3a4fe490"
