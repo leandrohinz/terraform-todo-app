@@ -269,7 +269,6 @@ module "instances_USERS-API" {
 
 module "instances_REDIS-DB" {
   source = "./instances"
-  #instance_count = 6
   ami           = "ami-0cbd40f694b804622"
   instance_type = "t2.micro"
   subnet_id     = "subnet-0088df5de3a4fe490"
