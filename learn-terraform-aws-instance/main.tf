@@ -309,7 +309,7 @@ module "instances_REDIS-DB" {
 module "instances_JENKINS" {
   source        = "./instances"
   ami           = "ami-0cbd40f694b804622"
-  instance_type = "t2.micro"
+  instance_type = "t2.small"
   subnet_id     = "subnet-0088df5de3a4fe490"
   sg_id         = module.SG_JENKINS.security_group_id
   sg_common     = module.SG_SSH-22.security_group_id
