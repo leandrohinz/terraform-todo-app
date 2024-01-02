@@ -20,5 +20,9 @@ resource "aws_instance" "server_instance" {
 
   user_data = file("script.sh")
 
+  root_block_device {
+    volume_size = var.volume_size
+  }
+
 }
 

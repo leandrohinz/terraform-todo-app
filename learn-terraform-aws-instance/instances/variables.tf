@@ -27,6 +27,12 @@ variable "sg_id" {
   type        = string
   description = "Security Group ID"
 }
+variable "volume_size" {
+  type        = number
+  description = "Tamaño del volumen"
+  default     = 8
+}
+
 
 
 

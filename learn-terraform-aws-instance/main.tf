@@ -314,6 +314,7 @@ module "instances_JENKINS" {
   sg_id         = module.SG_JENKINS.security_group_id
   sg_common     = module.SG_SSH-22.security_group_id
   key_name      = "KP-RampUp-LJH"
+  volume_size   = 10
 
   instance_name = "EC2-Rampup-JENKINS-LJH"
   #user_data = "${file("script.sh")}"
