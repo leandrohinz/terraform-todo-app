@@ -317,7 +317,7 @@ module "instances_JENKINS" {
   volume_size   = 10
 
   instance_name = "EC2-Rampup-JENKINS-LJH"
-  # user_data = <<-EOL
+  # user_data = <<EOF
   # #!/bin/bash -xe
 
   #   #!/bin/bash
@@ -342,6 +342,8 @@ module "instances_JENKINS" {
   #   #sudo systemctl enable containerd.service
   #   sudo reboot
 
+
+  #   EOF
 }
 
 module "instances_LJH-DB" {
@@ -352,7 +354,7 @@ module "instances_LJH-DB" {
   sg_id         = module.SG_REDIS-DB.security_group_id
   sg_common     = module.SG_SSH-22.security_group_id
   key_name      = "KP-RampUp-LJH"
-
-  instance_name = "EC2-Rampup-REDIS-DB-LJH"
+  
+  instance_name = "EC2-Rampup-LJH-DB-LJH"
 
 }
