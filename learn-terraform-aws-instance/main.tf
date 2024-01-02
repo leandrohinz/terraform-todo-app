@@ -354,6 +354,5 @@ module "instances_LJH-DB" {
   key_name      = "KP-RampUp-LJH"
 
   instance_name = "EC2-Rampup-REDIS-DB-LJH"
-  
 
 }
