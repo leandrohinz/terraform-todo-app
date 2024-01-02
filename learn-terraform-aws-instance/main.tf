@@ -317,6 +317,43 @@ module "instances_JENKINS" {
   volume_size   = 10
 
   instance_name = "EC2-Rampup-JENKINS-LJH"
-  #user_data = "${file("script.sh")}"
+  # user_data = <<-EOL
+  # #!/bin/bash -xe
+
+  #   #!/bin/bash
+  #   # Add Docker's official GPG key:
+  #   sudo apt-get update
+  #   sudo apt-get install ca-certificates curl gnupg
+  #   sudo install -m 0755 -d /etc/apt/keyrings
+  #   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  #   sudo chmod a+r /etc/apt/keyrings/docker.gpg
+  #   # Add the repository to Apt sources:
+  #   echo \
+  #   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  #   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  #   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  #   sudo apt-get update
+  #   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  #   #sudo docker run hello-world
+  #   #sudo groupadd docker
+  #   sudo usermod -aG docker $USER
+  #   #newgrp docker
+  #   #sudo systemctl enable docker.service
+  #   #sudo systemctl enable containerd.service
+  #   sudo reboot
+
+}
+
+module "instances_LJH-DB" {
+  source        = "./instances"
+  ami           = "ami-0cbd40f694b804622"
+  instance_type = "t2.micro"
+  subnet_id     = "subnet-0088df5de3a4fe490"
+  sg_id         = module.SG_REDIS-DB.security_group_id
+  sg_common     = module.SG_SSH-22.security_group_id
+  key_name      = "KP-RampUp-LJH"
+
+  instance_name = "EC2-Rampup-REDIS-DB-LJH"
+  
 
 }
